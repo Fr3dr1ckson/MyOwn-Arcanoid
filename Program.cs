@@ -1,4 +1,5 @@
-﻿using MyOwn_Arcanoid;
+﻿using System.Text;
+using MyOwn_Arcanoid;
 using static MyOwn_Arcanoid.ExtendetFunctions;
 
 
@@ -7,14 +8,7 @@ namespace MyOwn_Arcanoid
 {
     internal class Program
     {
-        /*                                                                                                                                                                                          
- _|    _|  _|            _|                                                                      _|    _|_|    _|_|_|    _|  _|    _|_|_|_|    _|_|_|  _|_|_|_|_|    _|_|      _|_|       
- _|    _|        _|_|_|  _|_|_|         _|_|_|    _|_|_|    _|_|    _|  _|_|    _|_|    _|     _|_|  _|    _|        _|  _|  _|    _|        _|                _|  _|    _|  _|    _|     
- _|_|_|_|  _|  _|    _|  _|    _|     _|_|      _|        _|    _|  _|_|      _|_|_|_|           _|      _|      _|_|    _|_|_|_|  _|_|_|    _|_|_|          _|      _|_|      _|_|_|     
- _|    _|  _|  _|    _|  _|    _|         _|_|  _|        _|    _|  _|        _|                 _|    _|            _|      _|          _|  _|    _|      _|      _|    _|        _|     
- _|    _|  _|    _|_|_|  _|    _|     _|_|_|      _|_|_|    _|_|    _|          _|_|_|  _|       _|  _|_|_|_|  _|_|_|        _|    _|_|_|      _|_|      _|          _|_|    _|_|_|       
-                     _|                                                                                                                                                                   
-                 _|_|                                                                                                                                                                     */
+        
         public static void Intro()
         {
             PlayLooped(true,SoundLib.Falling);
@@ -30,10 +24,20 @@ namespace MyOwn_Arcanoid
                 "| (   ) || (\\ (   | |      | (   ) || | \\   || |   | |   | |   | |   ) |",
                 "| )   ( || ) \\ \\__| (____/\\| )   ( || )  \\  || (___) |___) (___| (__/  )",
                 "|/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______/(______/ "};
-            string strHighScore = blankHorisontal + "             _              " + '\n' +
-                               blankHorisontal + " /_/._  /_  /_`_  _  _  _   . " + '\n' +
-                               blankHorisontal + "/ ///_// / ._//_ /_//  /_' .  " + '\n' +
-                               blankHorisontal + "    _/                      ";
+            string strHighScore = 
+                "██   ██ ██  ██████  ██   ██     ███████  ██████  ██████  ██████  ███████        " + '\n' + 
+                "██   ██ ██ ██       ██   ██     ██      ██      ██    ██ ██   ██ ██          ██ " + '\n' + 
+                "███████ ██ ██   ███ ███████     ███████ ██      ██    ██ ██████  █████          " + '\n' +        
+                "██   ██ ██ ██    ██ ██   ██          ██ ██      ██    ██ ██   ██ ██          ██ " + '\n' + 
+                "██   ██ ██  ██████  ██   ██     ███████  ██████  ██████  ██   ██ ███████        ";
+            /*string strHighScore = 
+                " |_|   |_| |_|             |_|             _|_|_|_|                                    |_|        _   " + '\n' + 
+                " |_|   |_|        |_|_|_|  |_|_|_|        |_|_ _       |_|_|_|    _|_|    _| _|_|    |_|_|_|     |_|  " + '\n' + 
+                " |_|_|_|_|  _|  |_|    |_| |_|    _|        |_|_|_    |_|        _|   _|  _|_|      _|_|_|_|          " + '\n' + 
+                " |_|    _|  _|  |_|    |_| |_|    _|       _ _ _|_|   |_|        _|   _|  _|        _|            _   " + '\n' + 
+                " |_|    _|  _|     |_|_|_| |_|    _|      |_|_|_|      |_|_|_|    _|_|    _|          _|_|_|     |_|  " + '\n' +
+                "                        _|                                                                            " + '\n' +
+                "                  |_|_|_|                                                                             ";*/
             for (int i = 0; i < Console.WindowHeight / 3; i++)
             {
                 for (int j = 0; j < i;j++)
@@ -54,7 +58,7 @@ namespace MyOwn_Arcanoid
             Console.SetCursorPosition(0,2);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(strHighScore);
-            AsciiArtWrite("146236743",strHighScore.Length/4+2,2); 
+            AsciiArtWrite("175295279",strHighScore.Length/5+2,2); 
             Console.ResetColor();
             Console.SetCursorPosition(0, Console.WindowHeight/3+8);
             Console.WriteLine();
@@ -79,11 +83,14 @@ namespace MyOwn_Arcanoid
         }
         public static void Main(string[] args)
         {
-            Program1.ShowWindow(Program1.ThisConsole, Program1.MAXIMIZE);
-            Console.Write($"Width: {Console.WindowWidth}, Height: {Console.WindowHeight}");
-            object[] l = { "xdd", 123, 'c' };
-            Console.ReadKey();
-            Intro();
+            while (true)
+            {
+                Console.Clear();
+                Console.OutputEncoding = Encoding.UTF8;
+                Program1.ShowWindow(Program1.ThisConsole, Program1.MAXIMIZE);
+                Intro();
+                Console.ReadKey(true);
+            }
             // for (int i = 9; i > 0; i--)
             // {
             //     Thread.Sleep(400);

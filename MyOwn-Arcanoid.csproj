@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <LangVersion>10</LangVersion>
-        <TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0;net6.0-windows;net7.0;net7.0-windows</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>

@@ -14,7 +14,7 @@ namespace MyOwn_Arcanoid
 
         public static void PlayLooped(bool check, string path = null)
         {
-            SoundPlayer wav = new SoundPlayer(path);
+            SoundPlayer wav = new SoundPlayer(path!);
             if (check)
             {
                 wav.Load();
@@ -44,103 +44,103 @@ namespace MyOwn_Arcanoid
             switch (s)
             {
                 case '0':
-                    string[] zero =
+                    string[] zero = 
                     {
-                        "  _|  ",
-                        "_|  _|",
-                        "_|  _|",
-                        "_|  _|",
-                        "  _|  "
+                        "   ██   ",
+                        "██   ██",
+                        "██   ██",
+                        "██   ██",
+                        "   ██   "
                     };
                     return zero;
                 case '1':
                     string[] one =
                     {
-                        "   _|",
-                        " _|_|",
-                        "   _|",
-                        "   _|",
-                        "   _|"
+                        "   ██",
+                        " ████",
+                        "   ██",
+                        "   ██",
+                        "   ██"
                     };
                     return one;
                 case '2':
                     string[] two =
                     {
-                        "  _|_|  ",
-                        "_|    _|",
-                        "     _| ",
-                        "   _|   ",
-                        "_|_|_|_|"
+                        "██████ ",
+                        "     ██",
+                        " █████ ",
+                        "██     ",
+                        "███████"
                     };
                     return two;
                 case '3':
                     string[] three =
                     {
-                        "_|_|_|  ",
-                        "      _|",
-                        "  _|_|  ",
-                        "      _|",
-                        "_|_|_|  "
+                        "██████  ",
+                        "      ██",
+                        "  ████  ",
+                        "      ██",
+                        "██████  "
                     };
                     return three;
                 case '4':
                     string[] four =
                     {
-                        "_|  _|  ",
-                        "_|  _|  ",
-                        "_|_|_|_|",
-                        "    _|  ",
-                        "    _|  "
+                        "██    ██",
+                        "██    ██",
+                        "████████",
+                        "      ██",
+                        "      ██"
                     };
                     return four;
                 case '5':
                     string[] five =
                     {
-                        "_|_|_|_|",
-                        "_|      ",
-                        "_|_|_|  ",
-                        "      _|",
-                        "_|_|_|  "
+                        "████████",
+                        "██      ",
+                        "████████",
+                        "      ██",
+                        "████████"
                     };
                     return five;
                 case '6':
                     string[] six =
                     {
-                        "  _|_|_|",
-                        "_|      ",
-                        "_|_|_|  ",
-                        "_|    _|",
-                        "  _|_|  "
+                        " ██████ ",
+                        "██      ",
+                        "███████ ",
+                        "██    ██",
+                        " ██████ "
                     };
                     return six;
                 case '7':
                     string[] seven =
                     {
-                        "_|_|_|_|_|",
-                        "        _|",
-                        "      _|  ",
-                        "    _|    ",
-                        "  _|      "
+                        "███████",
+                        "     ██",
+                        "    ██ ",
+                        "   ██  ",
+                        "   ██  "
                     };
                     return seven;
                 case '8':
                     string[] eight =
                     {
-                        "  _|_|  ",
-                        "_|    _|",
-                        "  _|_|  ",
-                        "_|    _|",
-                        "  _|_|  "
+                        "  ████  ",
+                        "██    ██",
+                        "  ████  ",
+                        "██    ██",
+                        "  ████  "
                     };
                     return eight;
                 case '9':
                     string[] nine =
                     {
-                        "  _|_|  ",
-                        "_|    _|",
-                        "  _|_|_|",
-                        "      _|",
-                        "_|_|_|  "
+                        " ███████ ",
+                        "██     ██",
+                        " ████████",
+                        "       ██",
+                        "  ██████ "
                     };
                     return nine;
                 default:
@@ -148,7 +148,111 @@ namespace MyOwn_Arcanoid
             }
         }
     }
-
+    /*switch (s)
+            {
+                case '0':
+                    string[] zero = 
+                    {
+                        "   |_|   ",
+                        "|_|   |_|",
+                        "|_|   |_|",
+                        "|_|   |_|",
+                        "   |_|   "
+                    };
+                    return zero;
+                case '1':
+                    string[] one =
+                    {
+                        "   |_|",
+                        "|_||_|",
+                        "   |_|",
+                        "   |_|",
+                        "   |_|"
+                    };
+                    return one;
+                case '2':
+                    string[] two =
+                    {
+                        "  |_||_|  ",
+                        "|_|    |_|",
+                        "     |_| ",
+                        "   |_|   ",
+                        "|_|_|_|_|"
+                    };
+                    return two;
+                case '3':
+                    string[] three =
+                    {
+                        "|_|_|_|  ",
+                        "      |_|",
+                        "  |_|_|  ",
+                        "      |_|",
+                        "|_|_|_|  "
+                    };
+                    return three;
+                case '4':
+                    string[] four =
+                    {
+                        "|_|  |_|  ",
+                        "|_|  |_|  ",
+                        "|_|_|_|_|",
+                        "    |_|  ",
+                        "    |_|  "
+                    };
+                    return four;
+                case '5':
+                    string[] five =
+                    {
+                        "|_|_|_|  ",
+                        "|_|      ",
+                        "|_|_|_|  ",
+                        "      |_|",
+                        "|_|_|_|  "
+                    };
+                    return five;
+                case '6':
+                    string[] six =
+                    {
+                        "  |_|_|_|",
+                        "|_|      ",
+                        "|_|_|_|  ",
+                        "|_|    |_|",
+                        "  |_|_|  "
+                    };
+                    return six;
+                case '7':
+                    string[] seven =
+                    {
+                        "|_|_|_|_|_|",
+                        "        |_|",
+                        "      |_|  ",
+                        "    |_|    ",
+                        "  |_|      "
+                    };
+                    return seven;
+                case '8':
+                    string[] eight =
+                    {
+                        "  |_|_|  ",
+                        "|_|    |_|",
+                        "  |_|_|  ",
+                        "|_|    |_|",
+                        "  |_|_|  "
+                    };
+                    return eight;
+                case '9':
+                    string[] nine =
+                    {
+                        "  |_|_|  ",
+                        "|_|    |_|",
+                        "  |_|_|_|",
+                        "      |_|",
+                        "|_|_|_|  "
+                    };
+                    return nine;
+                default:
+                    return new []{"1","2"};
+            }*/
     public class Program1
     {
         [DllImport("kernel32.dll", ExactSpelling = true)]
