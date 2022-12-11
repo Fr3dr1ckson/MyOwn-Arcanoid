@@ -2,8 +2,10 @@ namespace MyOwn_Arcanoid
 {
     public abstract class SoundLib
     {
-        public static string MainMenu = "C:\\Users\\onarg\\Desktop\\PB-Project_Arcanoid\\PB-Project_Arcanoid\\Game Start.wav";
-        
-        
+        public static string Path = @"C:\Users\User\RiderProjects\MyOwn-Arcanoid\MyOwn-Arcanoid\Sounds\\";
+        public static string MainMenu = Path + "Game Start.wav";
+        public static string Falling = Path + "Falling.wav";
+
+
     }
 }
